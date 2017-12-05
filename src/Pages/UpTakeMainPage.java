@@ -28,36 +28,36 @@ public class UpTakeMainPage {
 	
 	public boolean FirstNameExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("firstname-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=firstname]"), timeOut);
 	}
 	
 	public boolean LastNameExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("lastname-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=lastname]"), timeOut);
 	}
 	
 	public boolean EmailExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("email-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=email]"), timeOut);
 	}
 	
 	public boolean CompanyExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("company-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=company]"), timeOut);
 	}
 	
 	public boolean IndustryExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("vertical-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=vertical]"), timeOut);
 	}
 	
 	public boolean EmployeeCountExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("number_of_employees__c-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=number_of_employees]"), timeOut);
 	}
 	
 	public boolean EmployeeFunctionExists(int timeOut)
 	{
-		return UiHelpers.CheckElementExists(_driver, By.id("what_is_your_function_role_in_your_company_-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=function_role]"), timeOut);
 	}
 }
