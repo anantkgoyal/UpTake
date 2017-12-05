@@ -53,7 +53,6 @@ public class DemoPage {
 	
 	public void AssertDemoPageElementsDoNotExist()
 	{
-
 		assertFalse(FirstNameExists(1));
 		assertFalse(LastNameExists(1));
 		assertFalse(EmailExists(1));

@@ -75,6 +75,7 @@ public class MainPageTests
 	{
 		_mainPage.Products();
 		_demoPage.AssertDemoPageElementsDoNotExist();	
+		_products.VerifyPageCorrect();
 		_products.GetDemo();
 		_demoPage.AssertDemoPageElementsExist();
 	}
