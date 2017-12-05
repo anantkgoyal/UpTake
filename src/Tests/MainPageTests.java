@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import Pages.ContactPage;
 import Pages.DemoPage;
+import Pages.ProductsPage;
 import Pages.UpTakeMainPage;
 
 public class MainPageTests 
@@ -21,6 +22,8 @@ public class MainPageTests
 	static UpTakeMainPage _mainPage;
 	static ContactPage _contactPage;
 	static DemoPage _demoPage;
+	static ProductsPage _products;
+	
 	static WebDriver _driver;
 	@BeforeClass
 	public static void SetUpClass()
@@ -34,6 +37,7 @@ public class MainPageTests
 		_mainPage = new UpTakeMainPage(_driver);
 		_contactPage = new ContactPage(_driver);
 		_demoPage = new DemoPage(_driver);
+		_products = new ProductsPage(_driver);
 	}
 	
 	@AfterClass
@@ -59,5 +63,15 @@ public class MainPageTests
 		_contactPage.AssertContactPageElementsDoNoExist();		
 		_mainPage.Contact();		
 		_contactPage.AssertContactPageElementsExist();		
+	}
+	
+	@Test
+	public void ProductDemoTest()
+	{
+		_mainPage.GoToPage();
+		_mainPage.Products();
+		_demoPage.AssertDemoPageElementsDoNotExist();	
+		_products.GetDemo();
+		_demoPage.AssertDemoPageElementsExist();
 	}
 }

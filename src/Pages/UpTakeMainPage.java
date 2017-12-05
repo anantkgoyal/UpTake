@@ -32,4 +32,10 @@ public class UpTakeMainPage {
 		demoRequest.click();
 	}
 	
+	public void Products()
+	{
+		WebElement demoRequest = _driver.findElement(By.xpath("//*[contains(text(), 'Products')]"));
+		demoRequest.click();
+	}
+	
 }
