@@ -1,0 +1,1 @@
+This project explores the UpTake web pages and uses the Page Object Model
