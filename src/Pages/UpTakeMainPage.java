@@ -36,4 +36,28 @@ public class UpTakeMainPage {
 		return UiHelpers.CheckElementExists(_driver, By.id("lastname-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
 	}
 	
+	public boolean EmailExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.id("email-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+	}
+	
+	public boolean CompanyExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.id("company-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+	}
+	
+	public boolean IndustryExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.id("vertical-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+	}
+	
+	public boolean EmployeeCountExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.id("number_of_employees__c-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+	}
+	
+	public boolean EmployeeFunctionExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.id("what_is_your_function_role_in_your_company_-c7ed7b27-03cc-49ef-a175-ecef13772c93"), timeOut);
+	}
 }
