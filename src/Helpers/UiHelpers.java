@@ -21,7 +21,6 @@ public class UiHelpers {
 			}
 			catch(Exception e)
 			{
-				System.out.println(timeElapsed);
 				//Swallow exception
 			}
 			timeElapsed += sleepTime;

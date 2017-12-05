@@ -12,11 +12,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Pages.ContactPage;
+import Pages.DemoPage;
 import Pages.UpTakeMainPage;
 
 public class MainPageTests 
 {
 	static UpTakeMainPage _mainPage;
+	static ContactPage _contactPage;
+	static DemoPage _demoPage;
 	static WebDriver _driver;
 	@BeforeClass
 	public static void SetUpClass()
@@ -28,6 +32,8 @@ public class MainPageTests
 		_driver = new ChromeDriver();
 		
 		_mainPage = new UpTakeMainPage(_driver);
+		_contactPage = new ContactPage(_driver);
+		_demoPage = new DemoPage(_driver);
 	}
 	
 	@AfterClass
@@ -40,46 +46,18 @@ public class MainPageTests
 	@Test
 	public void RequestDemoTest() throws InterruptedException
 	{
-		_mainPage.GoToPage();
-		
-		assertFalse(_mainPage.FirstNameExists(1));
-		assertFalse(_mainPage.LastNameExists(1));
-		assertFalse(_mainPage.EmailExists(1));
-		assertFalse(_mainPage.CompanyExists(1));
-		assertFalse(_mainPage.IndustryExists(1));
-		assertFalse(_mainPage.EmployeeCountExists(1));
-		assertFalse(_mainPage.EmployeeFunctionExists(1));
-				
+		_mainPage.GoToPage();		
+		_demoPage.AssertDemoPageElementsDoNotExist();				
 		_mainPage.RequestDemo();
-		
-		assertTrue(_mainPage.FirstNameExists(5));
-		assertTrue(_mainPage.LastNameExists(1));
-		assertTrue(_mainPage.EmailExists(1));
-		assertTrue(_mainPage.CompanyExists(1));
-		assertTrue(_mainPage.IndustryExists(1));
-		assertTrue(_mainPage.EmployeeCountExists(1));
-		assertTrue(_mainPage.EmployeeFunctionExists(1));
+		_demoPage.AssertDemoPageElementsExist();
 	}
 	
 	@Test
 	public void ContactUsTest() throws InterruptedException
 	{
-		_mainPage.GoToPage();
-		
-		assertFalse(_mainPage.FirstNameExists(1));
-		assertFalse(_mainPage.LastNameExists(1));
-		assertFalse(_mainPage.EmailExists(1));
-		assertFalse(_mainPage.PhoneNumberExists(1));
-		assertFalse(_mainPage.HelpCategoryExists(1));
-		assertFalse(_mainPage.HelpDescriptionExists(1));
-				
-		_mainPage.Contact();
-		
-		assertTrue(_mainPage.FirstNameExists(5));
-		assertTrue(_mainPage.LastNameExists(1));
-		assertTrue(_mainPage.EmailExists(1));
-		assertTrue(_mainPage.PhoneNumberExists(1));
-		assertTrue(_mainPage.HelpCategoryExists(1));
-		assertTrue(_mainPage.HelpDescriptionExists(1));
+		_mainPage.GoToPage();				
+		_contactPage.AssertContactPageElementsDoNoExist();		
+		_mainPage.Contact();		
+		_contactPage.AssertContactPageElementsExist();		
 	}
 }
