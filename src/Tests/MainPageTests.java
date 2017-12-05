@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -47,10 +48,15 @@ public class MainPageTests
 		_driver.quit();
 	}
 	
+	@Before
+	public void RefreshTest()
+	{
+		_mainPage.GoToPage();	
+	}
+	
 	@Test
 	public void RequestDemoTest() throws InterruptedException
-	{
-		_mainPage.GoToPage();		
+	{			
 		_demoPage.AssertDemoPageElementsDoNotExist();				
 		_mainPage.RequestDemo();
 		_demoPage.AssertDemoPageElementsExist();
@@ -58,8 +64,7 @@ public class MainPageTests
 	
 	@Test
 	public void ContactUsTest() throws InterruptedException
-	{
-		_mainPage.GoToPage();				
+	{			
 		_contactPage.AssertContactPageElementsDoNoExist();		
 		_mainPage.Contact();		
 		_contactPage.AssertContactPageElementsExist();		
@@ -68,7 +73,6 @@ public class MainPageTests
 	@Test
 	public void ProductDemoTest()
 	{
-		_mainPage.GoToPage();
 		_mainPage.Products();
 		_demoPage.AssertDemoPageElementsDoNotExist();	
 		_products.GetDemo();
