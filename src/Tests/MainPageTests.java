@@ -60,4 +60,26 @@ public class MainPageTests
 		assertTrue(_mainPage.EmployeeCountExists(1));
 		assertTrue(_mainPage.EmployeeFunctionExists(1));
 	}
+	
+	@Test
+	public void ContactUsTest() throws InterruptedException
+	{
+		_mainPage.GoToPage();
+		
+		assertFalse(_mainPage.FirstNameExists(1));
+		assertFalse(_mainPage.LastNameExists(1));
+		assertFalse(_mainPage.EmailExists(1));
+		assertFalse(_mainPage.PhoneNumberExists(1));
+		assertFalse(_mainPage.HelpCategoryExists(1));
+		assertFalse(_mainPage.HelpDescriptionExists(1));
+				
+		_mainPage.Contact();
+		
+		assertTrue(_mainPage.FirstNameExists(5));
+		assertTrue(_mainPage.LastNameExists(1));
+		assertTrue(_mainPage.EmailExists(1));
+		assertTrue(_mainPage.PhoneNumberExists(1));
+		assertTrue(_mainPage.HelpCategoryExists(1));
+		assertTrue(_mainPage.HelpDescriptionExists(1));
+	}
 }

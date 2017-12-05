@@ -26,6 +26,12 @@ public class UpTakeMainPage {
 		demoRequest.click();
 	}
 	
+	public void Contact()
+	{
+		WebElement demoRequest = _driver.findElement(By.xpath("//*[contains(text(), 'Contact')]"));
+		demoRequest.click();
+	}
+	
 	public boolean FirstNameExists(int timeOut)
 	{
 		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=firstname]"), timeOut);
@@ -59,5 +65,20 @@ public class UpTakeMainPage {
 	public boolean EmployeeFunctionExists(int timeOut)
 	{
 		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=function_role]"), timeOut);
+	}
+	
+	public boolean PhoneNumberExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=phone]"), timeOut);
+	}
+	
+	public boolean HelpCategoryExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=how_can_we_help]"), timeOut);
+	}
+	
+	public boolean HelpDescriptionExists(int timeOut)
+	{
+		return UiHelpers.CheckElementExists(_driver, By.cssSelector("[id*=description]"), timeOut);
 	}
 }
